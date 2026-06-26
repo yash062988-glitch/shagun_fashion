@@ -1032,6 +1032,33 @@
   .weTypicallyReply {
     text-align: center;
   }
+
+  .homeButtonWrapper {
+    position: absolute !important;
+    top: 25px !important;
+    right: 20px !important;
+    z-index: 50 !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mergedAsset1Parent,
+  .mergedAsset2Parent,
+  .mergedAsset4Parent,
+  .mergedAsset5Parent {
+    width: 100% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    padding: 24px 20px !important;
+  }
+  .homeButtonWrapper {
+    top: 20px !important;
+    right: 20px !important;
+  }
+  .homeButton {
+    padding: 6px 16px !important;
+    font-size: 16px !important;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1047,6 +1074,7 @@
     font-size: 24px;
   }
 }
+
 
 .component1IconContainer {
   position: absolute;

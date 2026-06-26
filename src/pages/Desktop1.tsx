@@ -2,6 +2,7 @@ import { FunctionComponent, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FrameComponent2 from "../components/FrameComponent2";
 import Component1 from "../components/Component1";
+import HamburgerMenu from "../components/HamburgerMenu";
 import styles from "./Desktop1.module.css";
 
 export type Desktop1Type = {};
@@ -115,6 +116,7 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
           <h3 className={styles.contact}>CONTACT US</h3>
         </a>
       </nav>
+      <HamburgerMenu />
       <div className={styles.brandContainer}>
         <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <img className={styles.logoImage} loading="lazy" alt="Logo" src="/image-269@2x.png" />
@@ -123,6 +125,7 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
           <h1 className={styles.brandName}>SHAGUN FASHION</h1>
         </a>
       </div>
+
 
       <div className={styles.heroLeft}>
         <section className={styles.frameSection}>

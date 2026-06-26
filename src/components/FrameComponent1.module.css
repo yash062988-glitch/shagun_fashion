@@ -86,3 +86,11 @@
 .frameParent:hover .sportsTrack, .frameParent:hover .highPerformanceSportswearDe {
   color: #ffffff;
 }
+
+@media screen and (max-width: 480px) {
+  .frameParent {
+    width: 100% !important;
+    max-width: 420px !important;
+  }
+}
+

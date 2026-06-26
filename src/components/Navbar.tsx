@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SearchBar from "./SearchBar";
+import HamburgerMenu from "./HamburgerMenu";
 
 export default function Navbar() {
   return (
@@ -29,11 +30,13 @@ export default function Navbar() {
         <SearchBar />
         <a
           href="/"
-          className="flex items-center justify-center px-4 py-1.5 rounded-full border border-white/30 bg-transparent transition-all duration-300 hover:border-gold hover:bg-[#081C3A]/80 text-white font-semibold text-xs tracking-[0.2em] uppercase"
+          className="hidden lg:flex items-center justify-center px-4 py-1.5 rounded-full border border-white/30 bg-transparent transition-all duration-300 hover:border-gold hover:bg-[#081C3A]/80 text-white font-semibold text-xs tracking-[0.2em] uppercase"
         >
           HOME
         </a>
+        <HamburgerMenu />
       </div>
     </motion.nav>
   );
 }
+

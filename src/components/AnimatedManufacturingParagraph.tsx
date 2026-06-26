@@ -61,7 +61,8 @@ export default function AnimatedManufacturingParagraph({ trigger }: AnimatedManu
           fontSize: "inherit",
           lineHeight: "inherit",
           textAlign: "inherit",
-          height: "165px",
+          minHeight: "165px",
+          height: "auto",
         }}
       >
         {visibleLines.map((line, index) => (
