@@ -65,6 +65,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Desktop1 />} />
         <Route path="/items" element={<Items />} />
+        <Route path="/items/" element={<Items />} />
       </Routes>
     </>
   );

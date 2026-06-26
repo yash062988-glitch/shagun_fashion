@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -109,13 +110,23 @@ export default function HamburgerMenu() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + idx * 0.05 }}
                   >
-                    <a
-                      href={link.href}
-                      onClick={closeMenu}
-                      className="font-heading text-2xl tracking-[0.15em] text-white hover:text-gold transition-colors duration-300 py-2 block border-b border-white/5 active:text-gold"
-                    >
-                      {link.name}
-                    </a>
+                    {link.href.startsWith("/") && !link.href.endsWith("/") ? (
+                      <Link
+                        to={link.href}
+                        onClick={closeMenu}
+                        className="font-heading text-2xl tracking-[0.15em] text-white hover:text-gold transition-colors duration-300 py-2 block border-b border-white/5 active:text-gold"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        onClick={closeMenu}
+                        className="font-heading text-2xl tracking-[0.15em] text-white hover:text-gold transition-colors duration-300 py-2 block border-b border-white/5 active:text-gold"
+                      >
+                        {link.name}
+                      </a>
+                    )}
                   </motion.div>
                 ))}
               </nav>

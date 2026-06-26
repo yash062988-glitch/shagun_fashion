@@ -1,5 +1,6 @@
 import { FunctionComponent, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import FrameComponent2 from "../components/FrameComponent2";
 import Component1 from "../components/Component1";
 import HamburgerMenu from "../components/HamburgerMenu";
@@ -103,27 +104,27 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
         </div>
       </div>
       <nav className={styles.homeParent}>
-        <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <h3 className={styles.home}>HOME</h3>
-        </a>
+        </Link>
         <a href="/about/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <h3 className={styles.about}>ABOUT</h3>
         </a>
-        <a href="/items" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/items" style={{ textDecoration: 'none', color: 'inherit' }}>
           <h3 className={styles.items}>ITEMS</h3>
-        </a>
+        </Link>
         <a href="/contact/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <h3 className={styles.contact}>CONTACT US</h3>
         </a>
       </nav>
       <HamburgerMenu />
       <div className={styles.brandContainer}>
-        <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <img className={styles.logoImage} loading="lazy" alt="Logo" src="/image-269@2x.png" />
-        </a> 
-        <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        </Link> 
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <h1 className={styles.brandName}>SHAGUN FASHION</h1>
-        </a>
+        </Link>
       </div>
 
 
@@ -157,9 +158,9 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
         <div className={styles.desktop1Inner2}>
           <div className={styles.frameGroup}>
             <button className={styles.placeYourOrderWrapper}>
-              <a href="/items/" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Link to="/items" style={{ textDecoration: 'none', color: 'inherit', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div className={styles.placeYourOrder}>Place Your Order</div>
-              </a>
+              </Link>
             </button>
             <button className={styles.knowMoreWrapper}>
               <div className={styles.knowMore}>

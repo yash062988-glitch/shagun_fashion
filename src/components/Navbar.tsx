@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import HamburgerMenu from "./HamburgerMenu";
 
@@ -15,25 +16,25 @@ export default function Navbar() {
     >
       {/* Left Logo */}
       <div className="flex items-center">
-        <a href="/" className="flex items-center text-xl font-bold tracking-wider text-white hover:text-gold transition-colors duration-300 font-heading">
+        <Link to="/" className="flex items-center text-xl font-bold tracking-wider text-white hover:text-gold transition-colors duration-300 font-heading">
           <img
             src="/logo website.png"
             alt="Shagun Fashion Logo"
             className="h-[46px] w-auto object-contain -mr-[2px]"
           />
           SHAGUN FASHION
-        </a>
+        </Link>
       </div>
 
       {/* Right Controls */}
       <div className="flex items-center space-x-3 md:space-x-4">
         <SearchBar />
-        <a
-          href="/"
+        <Link
+          to="/"
           className="hidden lg:flex items-center justify-center px-4 py-1.5 rounded-full border border-white/30 bg-transparent transition-all duration-300 hover:border-gold hover:bg-[#081C3A]/80 text-white font-semibold text-xs tracking-[0.2em] uppercase"
         >
           HOME
-        </a>
+        </Link>
         <HamburgerMenu />
       </div>
     </motion.nav>
