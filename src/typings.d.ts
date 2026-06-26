@@ -5,3 +5,9 @@ declare module "*.css" {
   const classNames: IClassNames;
   export = classNames;
 }
+
+declare module "*.mp4" {
+  const src: string;
+  export default src;
+}
+

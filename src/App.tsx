@@ -1,13 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Routes,
   Route,
   useNavigationType,
   useLocation,
 } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Desktop1 from "./pages/Desktop1";
 import Items from "./pages/Items";
+import WebsiteIntro from "./components/WebsiteIntro";
+
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
   const action = useNavigationType();
   const location = useLocation();
   const pathname = location.pathname;
@@ -44,10 +48,18 @@ function App() {
   }, [pathname]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Desktop1 />} />
-      <Route path="/items" element={<Items />} />
-    </Routes>
+    <>
+      <AnimatePresence>
+        {showIntro && (
+          <WebsiteIntro onClose={() => setShowIntro(false)} />
+        )}
+      </AnimatePresence>
+      <Routes>
+        <Route path="/" element={<Desktop1 />} />
+        <Route path="/items" element={<Items />} />
+      </Routes>
+    </>
   );
 }
 export default App;
+
