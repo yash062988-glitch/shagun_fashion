@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceberg:ital,wght@0,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,400&display=swap");
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* Common Style Variables */
+
+  /* Color */
+  --color-black: #000;
+  --color-darkblue-100: #002bb9;
+  --color-darkblue-200: rgba(0, 43, 185, 0.2);
+  --color-gainsboro: rgba(230, 230, 230, 0.2);
+  --color-gray-100: #252525;
+  --color-gray-200: rgba(0, 0, 0, 0.5);
+  --color-gray-300: rgba(255, 255, 255, 0.6);
+  --color-gray-400: rgba(255, 255, 255, 0.2);
+  --color-mediumslateblue: rgba(51, 94, 237, 0.2);
+  --color-royalblue: #5f84fc;
+  --color-white: #fff;
+
+  /* Gap */
+  --gap-5: 5px;
+  --gap-6: 6px;
+
+  /* Padding */
+  --padding-0: 0px;
+  --padding-1: 1px;
+  --padding-2: 2px;
+  --padding-3: 3px;
+  --padding-4: 4px;
+  --padding-5: 5px;
+  --padding-6: 6px;
+  --padding-8: 8px;
+  --padding-10: 10px;
+  --padding-12: 12px;
+  --padding-18: 18px;
+  --padding-20: 20px;
+  --padding-24: 24px;
+
+  /* BorderRadius */
+  --br-4: 4px;
+  --br-6: 6px;
+  --br-10: 10px;
+
+  /* Font */
+  --font-inter: Inter, Arial, sans-serif;
+  --font-playfair: Playfair, Arial, sans-serif;
+  --font-iceberg: Iceberg, Arial, sans-serif;
+  --font-intel-one-mono: 'Intel One Mono', Arial, sans-serif;
+
+  /* FontSize */
+  --fs-11: 11px;
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+
+  /* Borders */
+  --border-1: 1px solid var(--color-gray-400);
+
+  /* Shadows */
+  --text-shadow-1: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  /* Gradients */
+  --gradient-1: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0)
+  );
+
+  /* WidthHeights */
+  --height-30: 30px;
+  --height-36: 36px;
+  --height-55: 55px;
+  --width-120: 120px;
+
+  --left-0: 0px;
+  --top-0: 0px;
+}

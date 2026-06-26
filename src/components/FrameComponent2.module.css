@@ -1,0 +1,60 @@
+.desktop1Inner,
+.groupWrapper {
+  position: absolute;
+  left: 0;
+  flex-shrink: 0;
+}
+.desktop1Inner {
+  top: 678px;
+  width: 3219px;
+  height: 415px;
+  overflow: hidden;
+}
+.groupWrapper {
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-10);
+}
+.shagunFashionShagunFashionParent {
+  height: 395px;
+  width: 5965px;
+  position: relative;
+  max-width: 100%;
+  text-align: center;
+  font-size: 326px;
+  color: var(--color-gray-500);
+  font-family: var(--font-inter);
+}
+.shagunFashionShagun {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  white-space: pre-wrap;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.groupChild {
+  position: absolute;
+  top: 72px;
+  left: 1813px;
+  width: var(--width-100);
+  height: var(--height-100);
+  overflow: hidden;
+}
+@media screen and (max-width: 750px) {
+  .shagunFashionShagun {
+    font-size: 130px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .shagunFashionShagun {
+    font-size: 81px;
+  }
+}

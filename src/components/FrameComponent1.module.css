@@ -1,0 +1,88 @@
+.frameParent {
+  width: var(--width-444);
+  max-width: var(--max-w-444);
+  height: 440px;
+  position: relative;
+  backdrop-filter: blur(14px);
+  border-radius: var(--br-8);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  text-align: left;
+  font-size: var(--fs-24);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+.frameChild {
+  position: absolute;
+  top: 19px;
+  left: calc(50% - 202px);
+  border-radius: var(--br-4);
+  width: var(--width-403);
+  height: var(--height-271);
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+.sportsTrackSuitsParent {
+  position: absolute;
+  top: 304px;
+  left: 16px;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-12);
+  max-width: 100%;
+  font-family: var(--font-iceberg);
+}
+.sportsTrack {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: var(--font-iceberg);
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+.highPerformanceSportswearDeWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+  flex-shrink: 0;
+  font-size: var(--fs-16);
+}
+.highPerformanceSportswearDe {
+  align-self: stretch;
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+  flex-shrink: 0;
+  font-family: var(--font-intel-one-mono);
+  color: var(--color-gray-300);
+}
+@media screen and (max-width: 450px) {
+  .sportsTrack {
+    font-size: var(--fs-19);
+  }
+}
+
+/* Hover Effects */
+.frameParent:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-gold);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.08);
+}
+
+.frameParent:hover .frameChild {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+}
+
+.frameParent:hover .sportsTrack, .frameParent:hover .highPerformanceSportswearDe {
+  color: #ffffff;
+}

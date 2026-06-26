@@ -1,0 +1,20 @@
+.component1Icon {
+  height: 2550px;
+  width: 2550px;
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 1632px);
+  left: calc(50% - 1275px);
+  object-fit: cover;
+  z-index: 0;
+  flex-shrink: 0;
+}
+.component1Child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: var(--color-darkblue-100);
+  width: 100%;
+  height: 100%;
+}

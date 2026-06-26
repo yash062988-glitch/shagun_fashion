@@ -1,0 +1,344 @@
+.component3,
+.frameParent {
+  position: absolute;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.component3 {
+  top: 0;
+  right: 69px;
+  width: 440px;
+  height: 1024px;
+  text-align: left;
+  font-size: var(--fs-24);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+.frameParent {
+  top: -5px;
+  left: -1px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-20);
+  animation: circularScroll 20s linear infinite;
+}
+.frameParent:hover {
+  animation-play-state: paused;
+}
+
+@keyframes circularScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+.frameGroup {
+  width: var(--width-444);
+  max-width: var(--max-w-444);
+  height: 440px;
+  position: relative;
+  backdrop-filter: blur(14px);
+  border-radius: var(--br-8);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-size: var(--fs-20);
+}
+.frameChild {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 202px);
+  border-radius: var(--br-4);
+  width: var(--width-399_5);
+  height: var(--height-269);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.winterCollectionParent {
+  position: absolute;
+  top: 312px;
+  left: 13px;
+  width: 448px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-6);
+  flex-shrink: 0;
+  font-family: var(--font-intel-one-mono);
+}
+.winterCollection {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: var(--font-iceberg);
+}
+.frameContainer,
+.premiumSweatersJackets {
+  max-width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.premiumSweatersJackets {
+  width: 425px;
+  font-size: var(--fs-16);
+  font-weight: 300;
+  display: inline-block;
+  padding-right: var(--padding-20);
+  font-family: var(--font-intel-one-mono);
+}
+.frameContainer {
+  width: var(--width-444);
+  height: 440px;
+  backdrop-filter: blur(14px);
+  border-radius: var(--br-8);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frameItem {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 202px);
+  border-radius: var(--br-4);
+  width: var(--width-399_5);
+  height: var(--height-269);
+  object-fit: cover;
+}
+.customHouseTShirtsParent {
+  position: absolute;
+  top: 309px;
+  left: 16px;
+  width: 424px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-12);
+  max-width: 100%;
+}
+.customHouseTShirts {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: var(--font-iceberg);
+}
+.uniqueHouseWiseTShirts {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-16);
+  font-weight: 300;
+  color: var(--color-gray-300);
+  display: inline-block;
+  flex-shrink: 0;
+  font-family: var(--font-intel-one-mono);
+}
+.frameDiv {
+  width: var(--width-444);
+  max-width: var(--max-w-444);
+  height: 440px;
+  position: relative;
+  backdrop-filter: blur(14px);
+  border-radius: var(--br-8);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frameInner {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 202px);
+  border-radius: var(--br-4);
+  width: var(--width-399_5);
+  height: var(--height-269);
+  object-fit: cover;
+}
+.printingEmbroideryParent {
+  position: absolute;
+  top: 315px;
+  left: 22px;
+  width: 404px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-4);
+}
+.printingEmbroidery {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: var(--font-iceberg);
+}
+.precisionPrintingAnd {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-16);
+  font-weight: 300;
+  color: var(--color-gray-300);
+  font-family: var(--font-intel-one-mono);
+}
+.frameParent2 {
+  width: var(--width-444);
+  max-width: var(--max-w-444);
+  height: 440px;
+  position: relative;
+  backdrop-filter: blur(14px);
+  border-radius: var(--br-8);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frameIcon {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 202px);
+  border-radius: var(--br-4);
+  width: var(--width-399_5);
+  height: var(--height-269);
+  object-fit: cover;
+}
+.manufacturingExcellence {
+  margin: 0;
+  position: absolute;
+  top: 304px;
+  left: 16px;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: var(--font-iceberg);
+}
+.stateOfTheArtCraftsmanship {
+  position: absolute;
+  top: 345px;
+  left: 18px;
+  font-size: var(--fs-16);
+  font-weight: 300;
+  color: var(--color-gray-300);
+  display: inline-block;
+  width: 401px;
+  font-family: var(--font-intel-one-mono);
+}
+.frameParent3 {
+  width: var(--width-444);
+  max-width: 100%;
+  height: 440px;
+  position: relative;
+  backdrop-filter: blur(14px);
+  border-radius: var(--br-8);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-size: var(--fs-20);
+}
+.frameChild2 {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 202px);
+  border-radius: var(--br-4);
+  width: var(--width-399_5);
+  height: var(--height-269);
+  object-fit: cover;
+}
+.winterCollectionGroup {
+  position: absolute;
+  top: 309px;
+  left: 13px;
+  width: 416px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-15);
+  max-width: 100%;
+}
+.winterCollection2 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: var(--font-iceberg);
+}
+.premiumSweatersJackets2 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-16);
+  font-weight: 300;
+  padding-right: var(--padding-16);
+  font-family: var(--font-intel-one-mono);
+}
+@media screen and (max-width: 450px) {
+  .winterCollection {
+    font-size: var(--fs-16);
+  }
+  .customHouseTShirts,
+  .manufacturingExcellence,
+  .printingEmbroidery {
+    font-size: var(--fs-19);
+  }
+  .winterCollection2 {
+    font-size: var(--fs-16);
+  }
+}
+
+/* Image Transitions */
+.frameChild, .frameItem, .frameInner, .frameIcon, .frameChild2 {
+  transition: all 0.3s ease;
+}
+
+/* Text Transitions */
+.premiumSweatersJackets,
+.uniqueHouseWiseTShirts,
+.precisionPrintingAnd,
+.stateOfTheArtCraftsmanship,
+.premiumSweatersJackets2 {
+  transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.frameGroup:hover,
+.frameContainer:hover,
+.frameDiv:hover,
+.frameParent2:hover,
+.frameParent3:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-gold);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.08);
+}
+
+.frameGroup:hover .frameChild,
+.frameContainer:hover .frameItem,
+.frameDiv:hover .frameInner,
+.frameParent2:hover .frameIcon,
+.frameParent3:hover .frameChild2 {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+}
+
+.frameGroup:hover .premiumSweatersJackets,
+.frameContainer:hover .uniqueHouseWiseTShirts,
+.frameDiv:hover .precisionPrintingAnd,
+.frameParent2:hover .stateOfTheArtCraftsmanship,
+.frameParent3:hover .premiumSweatersJackets2 {
+  color: #ffffff;
+}

@@ -1,0 +1,96 @@
+.frameParent {
+  width: var(--width-444);
+  max-width: var(--max-w-444);
+  backdrop-filter: blur(14px);
+  border-radius: var(--br-8);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  height: 440px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-27) var(--padding-19) var(--padding-27)
+    var(--padding-21);
+  gap: var(--gap-20);
+  text-align: left;
+  font-size: var(--fs-24);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+.frameChild {
+  align-self: stretch;
+  height: var(--height-252);
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+.frameWrapper {
+  width: var(--width-396);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-12);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.frameContainer,
+.premiumSchoolUniformsParent {
+  width: var(--width-391);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.frameContainer {
+  max-width: 106%;
+  flex-shrink: 0;
+}
+.premiumSchoolUniformsParent {
+  height: var(--height-60);
+  gap: var(--gap-12);
+}
+.premiumSchoolUniforms {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: var(--ls--0_09);
+  font-weight: 400;
+  font-family: var(--font-iceberg);
+  transition: color 0.3s ease;
+}
+.smartDurableUniforms {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--fs-16);
+  font-weight: 300;
+  color: var(--color-gray-300);
+  font-family: var(--font-intel-one-mono);
+}
+@media screen and (max-width: 450px) {
+  .premiumSchoolUniforms {
+    font-size: var(--fs-19);
+  }
+}
+
+
+/* Hover Effects */
+.frameParent:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-gold);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.08);
+}
+
+.frameParent:hover .frameChild {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+}
+
+.frameParent:hover .premiumSchoolUniforms {
+  color: #ffffff;
+}

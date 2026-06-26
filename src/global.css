@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceberg:ital,wght@0,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jura:ital,wght@0,400;0,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JejuMyeongjo:ital,wght@0,400&display=swap");
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* Common Style Variables */
+
+  /* Color */
+  --color-black: #000;
+  --color-gainsboro: #e6e6e6;
+  --color-gold: #dccf00;
+  --color-gray-100: rgba(255, 255, 255, 0.2);
+  --color-gray-200: rgba(0, 0, 0, 0.16);
+  --color-gray-300: rgba(255, 255, 255, 0.7);
+  --color-gray-400: rgba(255, 255, 255, 0.6);
+  --color-gray-500: rgba(255, 255, 255, 0.08);
+  --color-gray-600: rgba(255, 255, 255, 0.3);
+  --color-mediumblue: #093ee0;
+  --color-olive: #a89c00;
+  --color-royalblue: #577ffb;
+  --color-white: #fff;
+
+  /* Gap */
+  --gap-4: 4px;
+  --gap-6: 6px;
+  --gap-12: 12px;
+  --gap-15: 15px;
+  --gap-20: 20px;
+
+  /* Padding */
+  --padding-0: 0px;
+  --padding-10: 10px;
+  --padding-12: 12px;
+  --padding-16: 16px;
+  --padding-18: 18px;
+  --padding-19: 19px;
+  --padding-20: 20px;
+  --padding-21: 21px;
+  --padding-27: 27px;
+
+  /* BorderRadius */
+  --br-4: 4px;
+  --br-8: 8px;
+
+  /* Font */
+  --font-iceberg: Iceberg, Arial, sans-serif;
+  --font-intel-one-mono: Intel One Mono, Arial, sans-serif;
+  --font-inter: Inter, Arial, sans-serif;
+  --font-jejumyeongjo: JejuMyeongjo, Arial, sans-serif;
+  --font-jura: Jura, Arial, sans-serif;
+
+  /* FontSize */
+  --fs-16: 16px;
+  --fs-19: 19px;
+  --fs-20: 20px;
+  --fs-24: 24px;
+
+  /* Borders */
+  --border-1: 2px solid var(--color-gray-100);
+
+  /* WidthHeights */
+  --height-1: 1px;
+  --height-30: 30px;
+  --height-60: 60px;
+  --height-100: 100px;
+  --height-252: 252px;
+  --height-269: 269px;
+  --height-271: 271px;
+  --height-399: 399px;
+  --max-w-444: 444px;
+  --width-100: 100px;
+  --width-371: 371px;
+  --width-380: 380px;
+  --width-391: 391px;
+  --width-396: 396px;
+  --width-403: 403px;
+  --width-444: 444px;
+  --width-399_5: 399.5px;
+
+  /* LetterSpacings */
+  --ls--0_09: -0.09px;
+
+  --left-0: 0px;
+  --left-16: 16px;
+  --left-18: 18px;
+  --left-20: 20px;
+  --left-22: 22px;
+  --left-calc50-202: calc(50% - 202px);
+  --top-0: 0px;
+  --top-19: 19px;
+  --top-20: 20px;
+  --top-72: 72px;
+  --top-304: 304px;
+}
+
+@theme {
+  --color-primary-bg: #081C3A;
+  --color-gold: #D7A449;
+  --color-muted-text: #8B9BB4;
+  --font-sans: "Intel One Mono", monospace, sans-serif;
+  --font-heading: "Iceberg", sans-serif;
+  --animate-blink: blink 1s step-end infinite;
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+}
+
+@layer utilities {
+  .highlight-glow {
+    box-shadow: 0 0 25px rgba(215, 164, 73, 0.5);
+    border-color: #D7A449 !important;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+}
