@@ -18,15 +18,34 @@ export default function WebsiteIntro({ onClose }: WebsiteIntroProps) {
   const text1 = "WELCOME";
   const text2 = "TO SHAGUN FASHION OFFICIAL WEBSITE";
 
-  // Force restart playback on mount
+  // Force restart playback on mount with robust readyState checks
   useEffect(() => {
     const video = videoRef.current;
-    if (video) {
+    if (!video) return;
+
+    let isPlaying = false;
+
+    const playVideo = () => {
+      if (isPlaying) return;
       video.currentTime = 0;
-      video.play().catch((err) => {
-        console.warn("Autoplay was blocked or video play failed:", err);
-      });
+      video.play()
+        .then(() => {
+          isPlaying = true;
+        })
+        .catch((err) => {
+          console.warn("Autoplay request failed or was interrupted:", err);
+        });
+    };
+
+    if (video.readyState >= 3) {
+      playVideo();
+    } else {
+      video.addEventListener("canplay", playVideo);
     }
+
+    return () => {
+      video.removeEventListener("canplay", playVideo);
+    };
   }, []);
 
   // Sequential typewriter logic

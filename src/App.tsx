@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import {
   Routes,
   Route,
@@ -8,10 +8,16 @@ import {
 import { AnimatePresence } from "framer-motion";
 import Desktop1 from "./pages/Desktop1";
 import Items from "./pages/Items";
-import WebsiteIntro from "./components/WebsiteIntro";
+
+const WebsiteIntro = React.lazy(() => import("./components/WebsiteIntro"));
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.location.pathname === "/";
+    }
+    return false;
+  });
   const action = useNavigationType();
   const location = useLocation();
   const pathname = location.pathname;
@@ -51,7 +57,9 @@ function App() {
     <>
       <AnimatePresence>
         {showIntro && (
-          <WebsiteIntro onClose={() => setShowIntro(false)} />
+          <Suspense fallback={null}>
+            <WebsiteIntro onClose={() => setShowIntro(false)} />
+          </Suspense>
         )}
       </AnimatePresence>
       <Routes>
