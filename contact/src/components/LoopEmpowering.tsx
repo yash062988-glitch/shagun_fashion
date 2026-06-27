@@ -45,42 +45,55 @@ export default function LoopEmpowering() {
                         opacity: 0;
                     }
                 }
+                .empowering-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                }
+                .empowering-line1 {
+                    font-family: "Playfair Display", serif;
+                    font-style: italic;
+                    font-size: 64px;
+                    color: #002BB9;
+                    white-space: nowrap;
+                    line-height: 1.1;
+                    text-align: center;
+                }
+                .empowering-line2 {
+                    margin-top: 8px;
+                    font-family: "Space Mono", monospace;
+                    font-size: 52px;
+                    color: #FFFFFF;
+                    white-space: nowrap;
+                    line-height: 1.2;
+                    text-align: center;
+                }
+                @media screen and (max-width: 1023px) {
+                    .empowering-line1 {
+                        font-size: clamp(28px, 6.5vw, 48px) !important;
+                        white-space: normal !important;
+                        line-height: 1.25 !important;
+                        padding: 0 16px !important;
+                    }
+                    .empowering-line2 {
+                        font-size: clamp(22px, 5.5vw, 36px) !important;
+                        white-space: normal !important;
+                        line-height: 1.35 !important;
+                        padding: 0 16px !important;
+                    }
+                }
             `}</style>
 
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    width: "100%",
-                }}
-            >
-                <div
-                    style={{
-                        fontFamily: "Playfair Display",
-                        fontStyle: "italic",
-                        fontSize: "64px",
-                        color: "#002BB9",
-                        whiteSpace: "nowrap",
-                        lineHeight: "1.1",
-                    }}
-                >
+            <div className="empowering-container">
+                <div className="empowering-line1">
                     {line1}
                     {phase === 1 && (
                         <span style={{ animation: "blink 1s infinite" }}>|</span>
                     )}
                 </div>
 
-                <div
-                    style={{
-                        marginTop: "8px",
-                        fontFamily: "Space Mono",
-                        fontSize: "52px",
-                        color: "#FFFFFF",
-                        whiteSpace: "nowrap",
-                        lineHeight: "1.2",
-                    }}
-                >
+                <div className="empowering-line2">
                     {line2}
                     {phase === 2 && (
                         <span style={{ animation: "blink 1s infinite" }}>|</span>

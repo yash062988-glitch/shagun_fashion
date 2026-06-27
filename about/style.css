@@ -687,6 +687,14 @@ body {
             0 0 12px rgba(197, 168, 128, 0.3);
     }
 
+    .bg-overlay {
+        position: fixed !important;
+        inset: 0 !important;
+        background-size: cover !important;
+        background-position: left center !important;
+        z-index: 2 !important;
+    }
+
     .bg-overlay::after {
         background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 75%);
     }
@@ -742,14 +750,17 @@ body {
         position: relative;
         left: 0;
         top: 0;
-        width: 100%;
+        width: 100% !important;
         height: auto;
         margin-bottom: 20px;
+        display: flex !important;
+        justify-content: flex-end !important;
+        padding-right: 20px !important;
     }
 
     .rotating-flower {
-        width: 320px;
-        height: 320px;
+        width: clamp(180px, 40vw, 250px) !important;
+        height: clamp(180px, 40vw, 250px) !important;
     }
 
     .why-choose-us-section {
@@ -802,10 +813,11 @@ body {
     .header {
         padding: 10px 20px 0 20px;
         height: 80px;
+        gap: 10px !important;
     }
 
     .logo {
-        font-size: 22px;
+        font-size: clamp(16px, 4.5vw, 22px) !important;
     }
 
     .header-nav {
@@ -822,7 +834,7 @@ body {
     }
 
     .btn-filled {
-        width: 95px;
+        width: clamp(80px, 20vw, 95px) !important;
     }
 
     .line-header {
@@ -836,19 +848,26 @@ body {
 
     .hero-title {
         font-size: 48px;
+        line-height: 1.25 !important;
     }
 
     .section-title, .section-title-small, .why-title {
         font-size: 28px;
+        line-height: 1.25 !important;
     }
 
     .hero-subtitle, .section-desc, .section-desc-small {
         font-size: 16px;
+        line-height: 1.5 !important;
     }
 
     .left-column {
         gap: 30px;
         margin-bottom: 40px;
+    }
+
+    .mission-vision-container {
+        gap: 30px !important;
     }
 
     .hero-section, .story-section {
@@ -857,11 +876,6 @@ body {
 
     .line-subtitle, .line-story {
         width: 100%;
-    }
-
-    .rotating-flower {
-        width: 250px;
-        height: 250px;
     }
 
     .why-grid {

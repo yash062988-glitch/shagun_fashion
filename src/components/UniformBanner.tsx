@@ -15,7 +15,7 @@ export default function UniformBanner() {
   return (
     <section className="relative w-full py-16 bg-[#102B55] overflow-hidden border-y border-gold/20">
       <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
+
         {/* Left Blazer Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -75,7 +75,7 @@ export default function UniformBanner() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            href="https://wa.me/919999999999"
+            href="https://wa.me/9266379595"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 rounded-full bg-gold text-[#081C3A] font-bold text-xs tracking-widest uppercase hover:bg-white hover:text-black transition-colors duration-300 shadow-[0_5px_15px_rgba(215,164,73,0.3)]"

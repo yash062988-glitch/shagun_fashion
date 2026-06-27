@@ -14,6 +14,10 @@ const WebsiteIntro = React.lazy(() => import("./components/WebsiteIntro"));
 function App() {
   const [showIntro, setShowIntro] = useState(() => {
     if (typeof window !== "undefined") {
+      const hasSeenIntro = sessionStorage.getItem("hasSeenIntro");
+      if (hasSeenIntro) {
+        return false;
+      }
       return window.location.pathname === "/";
     }
     return false;
@@ -21,7 +25,7 @@ function App() {
   const action = useNavigationType();
   const location = useLocation();
   const pathname = location.pathname;
-
+  
   useEffect(() => {
     if (action !== "POP") {
       window.scrollTo(0, 0);
@@ -58,7 +62,10 @@ function App() {
       <AnimatePresence>
         {showIntro && (
           <Suspense fallback={null}>
-            <WebsiteIntro onClose={() => setShowIntro(false)} />
+            <WebsiteIntro onClose={() => {
+              sessionStorage.setItem("hasSeenIntro", "true");
+              setShowIntro(false);
+            }} />
           </Suspense>
         )}
       </AnimatePresence>

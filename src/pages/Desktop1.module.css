@@ -84,6 +84,7 @@
   opacity: 0.8;
   flex-shrink: 0;
   animation: bgFloat1 20s ease-in-out infinite;
+  pointer-events: none;
 }
 .desktop1Item {
   filter: blur(650px);
@@ -91,6 +92,7 @@
   width: 663px;
   height: 663px;
   animation: bgFloat2 25s ease-in-out infinite reverse;
+  pointer-events: none;
 }
 
 @keyframes bgFloat1 {
@@ -462,6 +464,15 @@
   }
   .tailoringBackgroundWrapper {
     width: 100% !important;
+    height: 100vh !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 0 !important;
+  }
+  .tailoringBackgroundImage {
+    object-fit: cover !important;
+    object-position: center !important;
   }
   .tailoringBackgroundOverlay {
     background: linear-gradient(to bottom, rgba(1, 10, 30, 0.45) 0%, rgba(1, 10, 30, 0.9) 100%) !important;
@@ -490,13 +501,14 @@
   .brandContainer {
     left: 20px !important;
     top: 20px !important;
+    gap: 10px !important;
   }
   .logoImage {
     width: 48px !important;
     height: 67px !important;
   }
   .brandName {
-    font-size: 22px !important;
+    font-size: clamp(16px, 4.5vw, 22px) !important;
   }
   .featuresContainer {
     flex-wrap: wrap !important;

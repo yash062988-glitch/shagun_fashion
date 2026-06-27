@@ -58,3 +58,8 @@
     font-size: 81px;
   }
 }
+@media screen and (max-width: 1023px) {
+  .desktop1Inner {
+    pointer-events: none !important;
+  }
+}

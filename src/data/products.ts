@@ -6,9 +6,9 @@ export interface Product {
 
 export const workedProducts: Product[] = [
   { id: 1, title: "DESIGNER T-SHIRT", imageSrc: "/images/product_red_tshirt.png" },
-  { id: 2, title: "TRACK SUIT", imageSrc: "/images/product_orange_tracksuit.png" },
-  { id: 3, title: "DESIGNER TRACK SUITS", imageSrc: "/images/product_blue_tracksuit.png" },
-  { id: 4, title: "DESIGNER T-SHIRT", imageSrc: "/images/product_red_tshirt.png" },
+  { id: 3, title: "TRACK SUIT", imageSrc: "/images/product_orange_tracksuit.png" },
+  { id: 4, title: "DESIGNER TRACK SUITS", imageSrc: "/images/product_blue_tracksuit.png" },
+  { id: 5, title: "DESIGNER T-SHIRT", imageSrc: "/images/product_red_tshirt.png" },
 ];
 
 export const regularProducts: Product[] = [
