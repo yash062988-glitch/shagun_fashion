@@ -808,6 +808,13 @@ body {
             0 0 8px rgba(197, 168, 128, 0.25);
     }
 
+    .flower-wrapper {
+        top: clamp(82px, 22vw, 110px) !important;
+        right: clamp(42px, 11vw, 62px) !important;
+        width: clamp(90px, 22vw, 125px) !important;
+        height: clamp(90px, 22vw, 125px) !important;
+    }
+
     .bg-overlay::after {
         background: linear-gradient(to right, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 85%);
     }
