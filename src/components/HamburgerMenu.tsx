@@ -56,7 +56,7 @@ export default function HamburgerMenu() {
       <button
         onClick={toggleMenu}
         aria-label="Open Menu"
-        className="fixed top-6 right-6 z-40 p-2.5 rounded-full border border-white/20 bg-black/60 backdrop-blur-md text-white hover:text-gold hover:border-gold transition-all duration-300 active:scale-95 flex items-center justify-center outline-none cursor-pointer"
+        className="hamburger-toggle-btn fixed top-6 right-6 z-40 p-2.5 rounded-full border border-white/20 bg-black/60 backdrop-blur-md text-white hover:text-gold hover:border-gold transition-all duration-300 active:scale-95 flex items-center justify-center outline-none cursor-pointer"
         style={{ minWidth: "48px", minHeight: "48px" }}
       >
         <Menu className="w-6 h-6 text-white" />

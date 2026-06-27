@@ -12,15 +12,15 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 bg-transparent transition-all duration-300 md:px-16"
+      className="main-navbar fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 bg-transparent transition-all duration-300 md:px-16"
     >
       {/* Left Logo */}
       <div className="flex items-center">
-        <Link to="/" className="flex items-center text-xl font-bold tracking-wider text-white hover:text-gold transition-colors duration-300 font-heading">
+        <Link to="/" className="navbar-logo-link flex items-center text-xl font-bold tracking-wider text-white hover:text-gold transition-colors duration-300 font-heading">
           <img
             src="/logo website.png"
             alt="Shagun Fashion Logo"
-            className="h-[46px] w-auto object-contain -mr-[2px]"
+            className="navbar-logo-img h-[46px] w-auto object-contain -mr-[2px]"
           />
           SHAGUN FASHION
         </Link>

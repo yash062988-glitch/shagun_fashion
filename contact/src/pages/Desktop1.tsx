@@ -320,68 +320,85 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
                 <InstagramCard />
               </motion.section>
 
-              {/* Need Help Section */}
-              <motion.header
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 1.4 }}
-                whileHover={{
-                  borderColor: "rgba(255, 255, 255, 0.4)",
-                  boxShadow: "0px 10px 35px rgba(0, 43, 185, 0.2)"
-                }}
-                className={`${styles.mergedAsset6Parent} ${styles.needHelpWide}`}
-              >
-                <div className={styles.mergedAsset6}>
-                    <div className={`${styles.premiumIconCircle} ${styles.premiumIconCircleLarge}`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
-                        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
-                      </svg>
-                    </div>
-                </div>
-                <div className={styles.frame649Column1}>
-                  <div className={styles.whatsapp}>Need Help ?</div>
-                  <div className={styles.ourTeamIs}>
-                    Our team is always ready
-                    <br />
-                    to assist you with your queries
+              {/* Need Help & Footer Desktop Flow Wrapper */}
+              <div className={styles.bottomSectionContainer}>
+                {/* Need Help Section */}
+                <motion.header
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 1.4 }}
+                  whileHover={{
+                    borderColor: "rgba(255, 255, 255, 0.4)",
+                    boxShadow: "0px 10px 35px rgba(0, 43, 185, 0.2)"
+                  }}
+                  className={`${styles.mergedAsset6Parent} ${styles.needHelpWide} ${styles.flowNeedHelp}`}
+                >
+                  <div className={styles.mergedAsset6}>
+                      <div className={`${styles.premiumIconCircle} ${styles.premiumIconCircleLarge}`}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+                        </svg>
+                      </div>
                   </div>
-                </div>
-                <div className={styles.lineWrapper}>
-                  <div className={styles.lineDiv} />
-                </div>
-                <div className={styles.frame649Column3}>
-                  <div className={styles.frame649Column32}>
-                    <div className={styles.frame649Column33}>
-                      <motion.button
-                        whileTap={btnTap}
-                        onClick={() => window.open("https://wa.me/9266379595", "_blank")}
-                        className={styles.frame649Column3Inner}
-                      >
-                        <div className={styles.sendUsAMessageParent}>
-                          <div
-                            className={styles.sendUsA}
-                          >{`Send us a Message `}</div>
-                          <img
-                            className={styles.vectorIcon}
-                            alt=""
-                            src="/contact/Vector4.svg"
-                          />
+                  <div className={styles.frame649Column1}>
+                    <div className={styles.whatsapp}>Need Help ?</div>
+                    <div className={styles.ourTeamIs}>
+                      Our team is always ready
+                      <br />
+                      to assist you with your queries
+                    </div>
+                  </div>
+                  <div className={styles.lineWrapper}>
+                    <div className={styles.lineDiv} />
+                  </div>
+                  <div className={styles.frame649Column3}>
+                    <div className={styles.frame649Column32}>
+                      <div className={styles.frame649Column33}>
+                        <motion.button
+                          whileTap={btnTap}
+                          onClick={() => window.open("https://wa.me/9266379595", "_blank")}
+                          className={styles.frame649Column3Inner}
+                        >
+                          <div className={styles.sendUsAMessageParent}>
+                            <div
+                              className={styles.sendUsA}
+                            >{`Send us a Message `}</div>
+                            <img
+                              className={styles.vectorIcon}
+                              alt=""
+                              src="/contact/Vector4.svg"
+                            />
+                          </div>
+                        </motion.button>
+                        <div className={styles.weTypicallyReply}>
+                          We typically reply within 
+                          <br/>
+                          a few minutes
                         </div>
-                      </motion.button>
-                      <div className={styles.weTypicallyReply}>
-                        We typically reply within 
-                        <br/>
-                        a few minutes
                       </div>
                     </div>
                   </div>
-                </div>
-              </motion.header>
+                </motion.header>
+
+                {/* Simple 3-line Footer */}
+                <footer className={styles.siteFooter}>
+                  <span className={styles.footerTitle}>
+                    SHAGUN FASHION - MADE WITH LOVE ❤️
+                  </span>
+                  <p className={styles.footerDesc}>
+                    Crafting premium quality garments, custom lowers, tracksuits, and school uniforms with precision.
+                  </p>
+                  <p className={styles.footerCopy}>
+                    &copy; {new Date().getFullYear()} Shagun Fashion. All rights reserved.
+                  </p>
+                </footer>
+              </div>
+              
             </div>
           </div>
-                <CallModal isOpen={isCallModalOpen} onClose={() => setCallModalOpen(false)} />
-      </div>
+          <CallModal isOpen={isCallModalOpen} onClose={() => setCallModalOpen(false)} />
+        </div>
       </main>
     </div>
   );

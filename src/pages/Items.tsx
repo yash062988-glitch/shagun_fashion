@@ -29,18 +29,15 @@ export default function Items() {
       {/* Manufacturing Process */}
       <ManufacturingProcess />
 
-      {/* Elegant Footer */}
-      <footer className="bg-[#051327] py-12 border-t border-white/5 flex flex-col items-center justify-center text-center">
-        <div className="flex flex-col items-center mb-6">
-          <span className="text-lg font-bold tracking-wider text-white mb-2 font-heading">
-            SHAGUN FASHION
-          </span>
-          <p className="text-muted-text text-[11px] max-w-[300px]">
-            Crafting premium quality garments, custom lowers, tracksuits, and school uniforms with precision.
-          </p>
-        </div>
-        
-        <p className="text-muted-text text-[10px] mt-2">
+      {/* Simple 3-line Footer */}
+      <footer className="w-full flex flex-col items-center justify-center text-center py-12 bg-[#051327] border-t border-white/5 z-20 pointer-events-auto">
+        <span className="font-bold tracking-widest text-white mb-1" style={{ fontFamily: 'var(--font-iceberg), sans-serif', fontSize: '16px' }}>
+          SHAGUN FASHION - MADE WITH LOVE ❤️
+        </span>
+        <p className="text-white/60 text-[11px] max-w-[350px] mb-1">
+          Crafting premium quality garments, custom lowers, tracksuits, and school uniforms with precision.
+        </p>
+        <p className="text-white/50 text-[10px]">
           &copy; {new Date().getFullYear()} Shagun Fashion. All rights reserved.
         </p>
       </footer>
