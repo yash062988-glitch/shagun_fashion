@@ -722,12 +722,15 @@ body {
     }
 
     .left-column {
-        position: relative;
+        position: static !important;
         width: 100%;
         height: auto;
-        left: 0;
-        top: 0;
         margin-bottom: 60px;
+    }
+
+    .hero-section {
+        position: relative !important;
+        width: 100% !important;
     }
 
     .hero-subtitle {
@@ -735,11 +738,9 @@ body {
     }
 
     .right-column {
-        position: relative;
+        position: static !important;
         width: 100%;
         height: auto;
-        right: 0;
-        top: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -747,20 +748,21 @@ body {
     }
 
     .flower-wrapper {
-        position: relative;
-        left: 0;
-        top: 0;
-        width: 100% !important;
-        height: auto;
-        margin-bottom: 20px;
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: clamp(70px, 18vw, 105px) !important;
+        height: clamp(70px, 18vw, 105px) !important;
+        margin: 0 !important;
+        z-index: 10 !important;
         display: flex !important;
-        justify-content: flex-end !important;
-        padding-right: 20px !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
 
     .rotating-flower {
-        width: clamp(180px, 40vw, 250px) !important;
-        height: clamp(180px, 40vw, 250px) !important;
+        width: 100% !important;
+        height: 100% !important;
     }
 
     .why-choose-us-section {

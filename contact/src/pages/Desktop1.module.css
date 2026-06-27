@@ -881,6 +881,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative !important;
   }
 
   .needHelpWide {
@@ -901,22 +902,19 @@
     position: relative;
     width: 100%;
     height: auto;
-    order: 1;
   }
   
   .backgroundCallImage {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: 95%;
-    max-width: 480px;
-    height: auto;
-    margin: 40px auto;
-    display: block;
-    z-index: 0;
+    position: absolute !important;
+    top: 100px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    max-width: 450px !important;
+    height: auto !important;
+    z-index: 5 !important;
     mask-image: none;
     -webkit-mask-image: none;
-    order: 2;
   }
   
   .callCard {
@@ -928,7 +926,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 100px 20px 60px;
+    padding: 0 20px 60px !important;
     box-sizing: border-box;
     gap: 30px;
   }
@@ -940,15 +938,29 @@
     width: 100%;
     height: auto;
     max-width: 100%;
+    padding-top: 450px !important;
+    box-sizing: border-box !important;
   }
 
   .limitentLeursSortiesParPeu {
-    position: relative;
-    top: auto;
-    left: auto;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 15px;
+    position: absolute !important;
+    top: 25px !important;
+    left: 20px !important;
+    right: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+    z-index: 50 !important;
+    margin: 0 !important;
+  }
+
+  .shagunFashions {
+    font-size: clamp(16px, 4vw, 24px) !important;
+  }
+
+  .personnesMalvoyantesDansLe {
+    display: none !important;
   }
   
   .thankYouForContactingUsWrapper {
@@ -1068,10 +1080,14 @@
   .homeButtonWrapper {
     top: 20px !important;
     right: 20px !important;
+    left: auto !important;
   }
   .homeButton {
     padding: 6px 16px !important;
     font-size: 16px !important;
+  }
+  .frameParent {
+    padding-top: 400px !important;
   }
 }
 
@@ -1085,7 +1101,29 @@
   }
   
   .shagunFashions {
-    font-size: 24px;
+    font-size: clamp(14px, 4vw, 20px) !important;
+  }
+
+  .limitentLeursSortiesParPeu {
+    top: 20px !important;
+    left: 15px !important;
+  }
+
+  .limitentLeursSortiesParPeu img {
+    width: 32px !important;
+  }
+
+  .homeButtonWrapper {
+    top: 20px !important;
+    right: 15px !important;
+  }
+
+  .backgroundCallImage {
+    top: 90px !important;
+  }
+
+  .frameParent {
+    padding-top: 330px !important;
   }
 }
 
