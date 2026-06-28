@@ -19,6 +19,7 @@
     "@types/jest": "^29.5.14",
     "@types/react": "^19.2.3",
     "@types/react-dom": "^19.2.3",
+    "@vercel/analytics": "^2.0.1",
     "express": "^5.2.1",
     "framer-motion": "^12.42.0",
     "lucide-react": "^1.21.0",
