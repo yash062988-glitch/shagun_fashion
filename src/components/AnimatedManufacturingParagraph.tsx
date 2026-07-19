@@ -15,16 +15,16 @@ interface AnimatedManufacturingParagraphProps {
 }
 
 export default function AnimatedManufacturingParagraph({ trigger }: AnimatedManufacturingParagraphProps) {
-  const [visibleLines, setVisibleLines] = useState<string[]>([]);
+  const [visibleCount, setVisibleCount] = useState<number>(0);
 
   useEffect(() => {
     let timers: NodeJS.Timeout[] = [];
 
-    setVisibleLines([]);
+    setVisibleCount(0);
 
-    lines.forEach((line, index) => {
+    lines.forEach((_, index) => {
       const timer = setTimeout(() => {
-        setVisibleLines((prev) => [...prev, line]);
+        setVisibleCount(index + 1);
       }, index * 500);
 
       timers.push(timer);
@@ -36,46 +36,35 @@ export default function AnimatedManufacturingParagraph({ trigger }: AnimatedManu
   }, [trigger]);
 
   return (
-    <>
-      <style>{`
-        @keyframes revealLine {
-          from {
-            opacity: 0;
-            transform: translateY(14px);
-          }
-
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
-
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "6px",
-          color: "inherit",
-          fontFamily: "inherit",
-          fontSize: "inherit",
-          lineHeight: "inherit",
-          textAlign: "inherit",
-          minHeight: "165px",
-          height: "auto",
-        }}
-      >
-        {visibleLines.map((line, index) => (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "6px",
+        color: "inherit",
+        fontFamily: "inherit",
+        fontSize: "inherit",
+        lineHeight: "inherit",
+        textAlign: "inherit",
+        width: "100%",
+      }}
+    >
+      {lines.map((line, index) => {
+        const isVisible = index < visibleCount;
+        return (
           <div
             key={index}
             style={{
-              animation: "revealLine .6s ease forwards",
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? "translateY(0)" : "translateY(12px)",
+              transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
+              willChange: "opacity, transform",
             }}
           >
             {line}
           </div>
-        ))}
-      </div>
-    </>
+        );
+      })}
+    </div>
   );
 }

@@ -125,7 +125,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[#081C3A]/30 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 max-w-2xl text-left mt-16 md:mt-24">
+      <div className="relative z-20 max-w-2xl text-left mt-4 md:mt-8">
         <p
           aria-label={fullWelcome}
           className="text-gold text-2xl md:text-3xl font-medium tracking-wide mb-3 font-heading"
@@ -145,7 +145,7 @@ export default function Hero() {
 
         <h1
           aria-label={fullHeading}
-          className="text-white text-4xl md:text-6xl font-bold leading-tight mb-6"
+          className="text-white text-4xl md:text-6xl font-bold leading-tight mb-5"
         >
           <span aria-hidden="true">
             <span className="text-white">{headingText}</span>
@@ -164,7 +164,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-muted-text text-sm md:text-base leading-relaxed mb-8 max-w-lg"
+          className="text-muted-text text-sm md:text-base leading-relaxed mb-6 max-w-lg"
         >
           <AnimatedManufacturingParagraph trigger={animationTrigger} />
         </motion.div>
@@ -173,7 +173,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="w-full flex justify-left mt-8"
+          className="w-full flex justify-left mt-4"
         >
           <a
             href="#products"
