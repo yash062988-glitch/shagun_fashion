@@ -1,19 +1,13 @@
 import React from "react";
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import FeatureStrip from "@/components/FeatureStrip";
 import ProductsSection from "@/components/ProductsSection";
 import UniformBanner from "@/components/UniformBanner";
 import ManufacturingProcess from "@/components/ManufacturingProcess";
-import { SearchProvider } from "@/context/SearchContext";
 
 export default function Items() {
   return (
-    <SearchProvider>
-      <div className="flex flex-col min-h-screen bg-primary-bg font-sans text-white">
-      {/* Navigation */}
-      <Navbar />
-
+    <div className="flex flex-col min-h-screen bg-primary-bg font-sans text-white">
       {/* Hero Header Section */}
       <Hero />
 
@@ -42,6 +36,5 @@ export default function Items() {
         </p>
       </footer>
     </div>
-    </SearchProvider>
   );
 }

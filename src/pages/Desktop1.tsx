@@ -3,12 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import FrameComponent2 from "../components/FrameComponent2";
 import Component1 from "../components/Component1";
-import HamburgerMenu from "../components/HamburgerMenu";
 import styles from "./Desktop1.module.css";
 
 export type Desktop1Type = {};
 
-const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
+const Desktop1: FunctionComponent<Desktop1Type> = ({ }) => {
   const paragraph = "Shagun Fashion is a trusted school uniform manufacturer specializing in premium-quality uniforms, sportswear, tracksuits, and custom school apparel. We combine comfort, durability, and professional craftsmanship to deliver uniforms that reflect identity, confidence, and excellence for schools across India.";
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
@@ -21,11 +20,11 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
     const typeChar = () => {
       if (currentIndex < paragraph.length) {
         setDisplayedText(paragraph.slice(0, currentIndex + 1));
-        
+
         let delay = 30;
         const char = paragraph[currentIndex];
         if (char === ',' || char === '.') delay = 300;
-        
+
         currentIndex++;
         timeout = setTimeout(typeChar, delay);
       } else {
@@ -64,8 +63,8 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
             <span className="text-white font-mono text-[11px] tracking-widest uppercase mt-[1px]">
               System is under control
             </span>
-            <button 
-              onClick={() => setShowSystemPopup(false)} 
+            <button
+              onClick={() => setShowSystemPopup(false)}
               className="ml-4 text-white/40 hover:text-white transition-colors cursor-pointer outline-none pb-0.5"
             >
               ✕
@@ -84,9 +83,9 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
       <FrameComponent2 property1="Default" />
       <section className={styles.desktop1Child} />
       <div className={styles.desktop1Item} />
-      
+
       <div className={styles.heroGlow} />
-      
+
       <div className={styles.particles}>
         <div className={styles.particle} />
         <div className={styles.particle} />
@@ -103,29 +102,7 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
           <h2 className={styles.shagunFashion}>SHAGUN FASHION</h2>
         </div>
       </div>
-      <nav className={styles.homeParent}>
-        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <h3 className={styles.home}>HOME</h3>
-        </Link>
-        <a href="/about/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <h3 className={styles.about}>ABOUT</h3>
-        </a>
-        <Link to="/items" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <h3 className={styles.items}>ITEMS</h3>
-        </Link>
-        <a href="/contact/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <h3 className={styles.contact}>CONTACT US</h3>
-        </a>
-      </nav>
-      <HamburgerMenu />
-      <div className={styles.brandContainer}>
-        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <img className={styles.logoImage} loading="lazy" alt="Logo" src="/image-269@2x.png" />
-        </Link> 
-        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <h1 className={styles.brandName}>SHAGUN FASHION</h1>
-        </Link>
-      </div>
+
 
 
       <div className={styles.heroLeft}>

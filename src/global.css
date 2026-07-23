@@ -174,3 +174,34 @@ body {
     min-height: 40px !important;
   }
 }
+
+/* Magic UI Smooth Cursor global cursor hiding and text preservation */
+@media (any-hover: hover) and (any-pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+
+  input,
+  textarea,
+  select,
+  [contenteditable="true"],
+  [contenteditable] {
+    cursor: text !important;
+  }
+}
+
+/* Hide browser scrollbars while preserving scrolling functionality */
+html, body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+

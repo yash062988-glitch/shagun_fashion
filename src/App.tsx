@@ -8,6 +8,8 @@ import {
 import { AnimatePresence } from "framer-motion";
 import Desktop1 from "./pages/Desktop1";
 import Items from "./pages/Items";
+import Navbar from "./components/Navbar";
+import { SmoothCursor } from "./components/ui/smooth-cursor";
 
 const WebsiteIntro = React.lazy(() => import("./components/WebsiteIntro"));
 
@@ -38,8 +40,12 @@ function App() {
 
     switch (pathname) {
       case "/":
-        title = "";
-        metaDescription = "";
+        title = "Shagun Fashion | Home";
+        metaDescription = "Shagun Fashion is a trusted school uniform manufacturer.";
+        break;
+      case "/items":
+        title = "Shagun Fashion | Items & Collection";
+        metaDescription = "Explore school uniforms, sportswear, lowers and custom garments.";
         break;
     }
 
@@ -59,6 +65,10 @@ function App() {
 
   return (
     <>
+      <SmoothCursor />
+      {/* Global Navbar rendered across all pages */}
+      <Navbar />
+
       <AnimatePresence>
         {showIntro && (
           <Suspense fallback={null}>
@@ -72,10 +82,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Desktop1 />} />
         <Route path="/items" element={<Items />} />
-        <Route path="/items/" element={<Items />} />
+        <Route path="/items/*" element={<Items />} />
+        <Route path="*" element={<Desktop1 />} />
       </Routes>
     </>
   );
 }
-export default App;
 
+export default App;

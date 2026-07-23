@@ -6,13 +6,17 @@ import { BrowserRouter } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import "./global.css";
 
+import { SearchProvider } from "./context/SearchContext";
+
 const container = document.getElementById("root");
 
 const root = createRoot(container as Element);
 root.render(
   <BrowserRouter>
-    <App />
-    <Analytics />
+    <SearchProvider>
+      <App />
+      <Analytics />
+    </SearchProvider>
   </BrowserRouter>
 );
 

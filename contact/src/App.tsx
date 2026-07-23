@@ -6,6 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Desktop1 from "./pages/Desktop1";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 function App() {
   const action = useNavigationType();
@@ -44,9 +45,13 @@ function App() {
   }, [pathname]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Desktop1 />} />
-    </Routes>
+    <>
+      <SmoothCursor />
+      <Routes>
+        <Route path="/" element={<Desktop1 />} />
+      </Routes>
+    </>
   );
 }
 export default App;
+

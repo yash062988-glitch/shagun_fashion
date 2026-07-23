@@ -21,8 +21,9 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
 
 export function useSearch() {
   const context = useContext(SearchContext);
+  const [localQuery, setLocalQuery] = useState("");
   if (context === undefined) {
-    throw new Error("useSearch must be used within a SearchProvider");
+    return { searchQuery: localQuery, setSearchQuery: setLocalQuery };
   }
   return context;
 }

@@ -5,6 +5,7 @@ import InstagramCard from "../components/InstagramCard";
 import LoopEmpowering from "../components/LoopEmpowering";
 import CallModal from "../components/CallModal";
 import AnimatedParagraph from "../components/AnimatedParagraph";
+import Navbar from "@/components/Navbar";
 import styles from "./Desktop1.module.css";
 
 export type Desktop1Type = {};
@@ -70,6 +71,9 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
 
   return (
     <div className={styles.desktop1}>
+      {/* Global Landing Page Navbar */}
+      <Navbar />
+
       <div className={styles.component1IconContainer}>
         <Component1Icon property1="Frame 13" />
       </div>
@@ -105,38 +109,7 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
           <div className={styles.callCard}>
             <div className={styles.frameParent}>
               
-              {/* Header Logo */}
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-                className={styles.limitentLeursSortiesParPeu}
-              >
-                <div>
-                  <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '15px', textDecoration: 'none', color: 'inherit' }}>
-                    <img src="/image-269@2x.png" alt="Logo" style={{ width: '50px', height: '70px', objectFit: 'cover' }} />
-                    <h1 className={styles.shagunFashions}>SHAGUN FASHIONS</h1>
-                  </a>
-                </div>
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: 226 }}
-                  transition={{ duration: 0.8, ease: "easeInOut", delay: 0.7 }}
-                  className={styles.personnesMalvoyantesDansLe}
-                />
-              </motion.div>
 
-              {/* Home Button */}
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-                className={styles.homeButtonWrapper}
-              >
-                <a href="/" className={styles.homeButton}>
-                  Home
-                </a>
-              </motion.div>
 
               
 

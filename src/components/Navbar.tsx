@@ -1,43 +1,37 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import PillNav from "./PillNav";
 import SearchBar from "./SearchBar";
-import HamburgerMenu from "./HamburgerMenu";
 
 export default function Navbar() {
-  return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="main-navbar fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 bg-transparent transition-all duration-300 md:px-16"
-    >
-      {/* Left Logo */}
-      <div className="flex items-center">
-        <Link to="/" className="navbar-logo-link flex items-center text-xl font-bold tracking-wider text-white hover:text-gold transition-colors duration-300 font-heading">
-          <img
-            src="/logo website.png"
-            alt="Shagun Fashion Logo"
-            className="navbar-logo-img h-[46px] w-auto object-contain -mr-[2px]"
-          />
-          SHAGUN FASHION
-        </Link>
-      </div>
+  const location = useLocation();
+  const currentPath = typeof window !== "undefined" ? window.location.pathname : location.pathname;
 
-      {/* Right Controls */}
-      <div className="flex items-center space-x-3 md:space-x-4">
+  const navItems = [
+    { label: "HOME", href: "/" },
+    { label: "ABOUT", href: "/about/" },
+    { label: "ITEMS", href: "/items" },
+    { label: "CONTACT US", href: "/contact/" },
+  ];
+
+  return (
+    <div className="relative w-full z-50">
+      <PillNav
+        logo="/logo website.png"
+        logoAlt="Shagun Fashion Logo"
+        items={navItems}
+        activeHref={currentPath}
+        baseColor="#030c22"
+        pillColor="#081c3a"
+        hoverCircleColor="#ffffff"
+        hoveredPillTextColor="#030c22"
+        pillTextColor="#ffffff"
+      />
+      <div className="fixed top-5 right-6 z-50 hidden sm:block">
         <SearchBar />
-        <Link
-          to="/"
-          className="hidden lg:flex items-center justify-center px-4 py-1.5 rounded-full border border-white/30 bg-transparent transition-all duration-300 hover:border-gold hover:bg-[#081C3A]/80 text-white font-semibold text-xs tracking-[0.2em] uppercase"
-        >
-          HOME
-        </Link>
-        <HamburgerMenu />
       </div>
-    </motion.nav>
+    </div>
   );
 }
-

@@ -22,6 +22,7 @@
     "@vercel/analytics": "^2.0.1",
     "express": "^5.2.1",
     "framer-motion": "^12.42.0",
+    "gsap": "^3.15.0",
     "lucide-react": "^1.21.0",
     "puppeteer": "^25.2.1",
     "react": "^19.2.3",
@@ -47,6 +48,7 @@
   "name": "home",
   "private": true,
   "scripts": {
+    "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
