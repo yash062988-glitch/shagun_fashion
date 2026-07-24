@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import FrameComponent2 from "../components/FrameComponent2";
 import Component1 from "../components/Component1";
+import { LuxuryFeatures } from "../components/LuxuryFeatures";
+import Footer from "../components/Footer";
+import TrustedSchoolsDivider from "../components/TrustedSchoolsDivider";
 import styles from "./Desktop1.module.css";
 
 export type Desktop1Type = {};
@@ -16,36 +19,36 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({ }) => {
   useEffect(() => {
     let timeout: NodeJS.Timeout;
     let currentIndex = 0;
-
-    const typeChar = () => {
+    
+    // Typewriter effect logic
+    const typeNextChar = () => {
       if (currentIndex < paragraph.length) {
         setDisplayedText(paragraph.slice(0, currentIndex + 1));
-
-        let delay = 30;
-        const char = paragraph[currentIndex];
-        if (char === ',' || char === '.') delay = 300;
-
         currentIndex++;
-        timeout = setTimeout(typeChar, delay);
+        timeout = setTimeout(typeNextChar, 15);
       } else {
         setIsTyping(false);
-        timeout = setTimeout(() => {
-          setDisplayedText("");
-          currentIndex = 0;
-          setIsTyping(true);
-          typeChar();
-        }, 2000);
       }
     };
 
-    timeout = setTimeout(typeChar, 100);
+    timeout = setTimeout(typeNextChar, 100);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [paragraph]);
 
-  useEffect(() => {
-    const popupTimer = setTimeout(() => setShowSystemPopup(true), 2500);
-    return () => clearTimeout(popupTimer);
-  }, []);
+  // Mouse position tracking for background shine
+  const [bgMouseX, setBgMouseX] = useState(50);
+  const [bgHoverActive, setBgHoverActive] = useState(false);
+
+  const handleBgMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    setBgMouseX(Math.max(0, Math.min(100, x)));
+    setBgHoverActive(true);
+  };
+
+  const handleBgMouseLeave = () => {
+    setBgHoverActive(false);
+  };
 
   return (
     <div className={styles.desktop1}>
@@ -72,6 +75,7 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({ }) => {
           </motion.div>
         )}
       </AnimatePresence>
+
       <div className={styles.tailoringBackgroundWrapper}>
         <img
           src="/new.png"
@@ -80,6 +84,7 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({ }) => {
         />
         <div className={styles.tailoringBackgroundOverlay} />
       </div>
+
       <FrameComponent2 property1="Default" />
       <section className={styles.desktop1Child} />
       <div className={styles.desktop1Item} />
@@ -93,17 +98,6 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({ }) => {
         <div className={styles.particle} />
         <div className={styles.particle} />
       </div>
-
-      <div className={styles.shagunFashionWrapper}>
-        <div className={styles.marqueeContent}>
-          <h2 className={styles.shagunFashion}>SHAGUN FASHION</h2>
-          <h2 className={styles.shagunFashion}>SHAGUN FASHION</h2>
-          <h2 className={styles.shagunFashion}>SHAGUN FASHION</h2>
-          <h2 className={styles.shagunFashion}>SHAGUN FASHION</h2>
-        </div>
-      </div>
-
-
 
       <div className={styles.heroLeft}>
         <section className={styles.frameSection}>
@@ -149,34 +143,27 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({ }) => {
           </div>
         </div>
 
-        <div className={styles.trustedSectionWrapper}>
-          <div className={styles.trustedSection}>
-            <img className={styles.shieldIcon} alt="Shield" src="/Vector.svg" />
-            <h3 className={styles.trustedByLeading}>
-              Trusted By Leading Schools
-            </h3>
-            <div className={styles.yellowLine} />
+        <TrustedSchoolsDivider />
+
+        <LuxuryFeatures />
+
+        {/* Marquee Background Banner: Fully Visible Between Featured Cards and Footer Card */}
+        <div
+          className={styles.shagunFashionWrapper}
+          onMouseMove={handleBgMouseMove}
+          onMouseLeave={handleBgMouseLeave}
+          style={{
+            '--mouse-x': `${bgMouseX}%`,
+          } as React.CSSProperties}
+          data-hover={bgHoverActive ? "true" : "false"}
+        >
+          <div className={styles.marqueeContent}>
+            <h2 className={styles.shagunFashion}>SHAGUN FASHION</h2>
+            <h2 className={styles.shagunFashion}>SHAGUN FASHION</h2>
+            <h2 className={styles.shagunFashion}>SHAGUN FASHION</h2>
+            <h2 className={styles.shagunFashion}>SHAGUN FASHION</h2>
           </div>
         </div>
-
-        <section className={styles.featuresContainer}>
-          <div className={styles.featureItem}>
-            <img className={styles.featureIcon} loading="lazy" alt="" src="/Vector1.svg" />
-            <div className={styles.featureText}>On-Time<br />Delivery</div>
-          </div>
-          <div className={styles.featureItem}>
-            <img className={styles.featureIcon} loading="lazy" alt="" src="/merged-asset-1@2x.png" />
-            <div className={styles.featureText}>Premium<br />Quality</div>
-          </div>
-          <div className={styles.featureItem}>
-            <img className={styles.featureIcon} loading="lazy" alt="" src="/Vector2.svg" />
-            <div className={styles.featureText}>Perfect Fit<br />Guaranteed</div>
-          </div>
-          <div className={styles.featureItem}>
-            <img className={styles.featureIcon} loading="lazy" alt="" src="/Vector3.svg" />
-            <div className={styles.featureText}>Dedicated<br />Support</div>
-          </div>
-        </section>
       </div>
 
       <Component1
@@ -186,18 +173,8 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({ }) => {
         frame1181DivHeight="unset"
       />
 
-      {/* Simple 3-line Footer */}
-      <footer className="absolute bottom-4 left-0 w-full flex flex-col items-center justify-center text-center z-20 pointer-events-auto">
-        <span className="font-bold tracking-widest text-white mb-1" style={{ fontFamily: 'var(--font-iceberg), sans-serif', fontSize: '16px' }}>
-          SHAGUN FASHION - MADE WITH LOVE ❤️
-        </span>
-        <p className="text-white/60 text-[11px] max-w-[350px] mb-1">
-          Crafting premium quality garments, custom lowers, tracksuits, and school uniforms with precision.
-        </p>
-        <p className="text-white/50 text-[10px]">
-          &copy; {new Date().getFullYear()} Shagun Fashion. All rights reserved.
-        </p>
-      </footer>
+      {/* Luxury Branded Footer */}
+      <Footer />
     </div>
   );
 };

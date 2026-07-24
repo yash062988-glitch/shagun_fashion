@@ -65,7 +65,7 @@ body {
 .bg-overlay {
     position: absolute;
     inset: 0;
-    background: url('assets/uniform_overlay_v2_cropped.jpg') no-repeat center left;
+    background: url('assets/about_bg.png') no-repeat center left;
     background-size: cover;
     opacity: 1.0; /* Full opacity to show the raw, beautiful image clearly */
     pointer-events: none;
@@ -73,8 +73,6 @@ body {
     /* Hardware acceleration & contrast enhancements to optimize background text clarity */
     transform: translateZ(0);
     filter: contrast(1.15) brightness(0.92);
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
 }
 
 .bg-overlay::after {

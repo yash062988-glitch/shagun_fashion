@@ -5,8 +5,8 @@
   position: relative;
   backdrop-filter: blur(14px);
   border-radius: var(--br-8);
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(1, 10, 30, 0.85) 0%, rgba(2, 18, 45, 0.78) 100%);
+  border: 1px solid rgba(197, 168, 128, 0.16);
   transition: all 0.3s ease;
   box-sizing: border-box;
   overflow: hidden;

@@ -38,13 +38,15 @@ const FrameComponent1: FunctionComponent<FrameComponent1Type> = ({
       />
       <div className={styles.sportsTrackSuitsParent} style={frameDiv1Style}>
         <h3 className={styles.sportsTrack}>{`02. SPORTS & TRACK SUITS`}</h3>
-        <div
-          className={styles.highPerformanceSportswearDeWrapper}
-          style={frameDiv2Style}
-        >
+        <div className="card-footer">
           <div className={styles.highPerformanceSportswearDe}>
             High-performance sportswear designed for comfort, flexibility, and
             active school life.
+          </div>
+          <div className="card-icon-wrapper">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
           </div>
         </div>
       </div>

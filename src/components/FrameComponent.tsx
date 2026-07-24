@@ -37,9 +37,16 @@ const FrameComponent: FunctionComponent<FrameComponentType> = ({
             <h3 className={styles.premiumSchoolUniforms}>
               01. PREMIUM SCHOOL UNIFORMS
             </h3>
-            <div className={styles.smartDurableUniforms}>
-              Smart, durable uniforms crafted to build confidence, identity, and
-              excellence in every student.
+            <div className="card-footer">
+              <div className={styles.smartDurableUniforms}>
+                Smart, durable uniforms crafted to build confidence, identity, and
+                excellence in every student.
+              </div>
+              <div className="card-icon-wrapper">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2a2 2 0 0 1 2 2c0 .7-.4 1.3-1 1.7L22 13a2 2 0 0 1-1 3H3a2 2 0 0 1-1-3l9-7.3c-.6-.4-1-1-1-1.7a2 2 0 0 1 2-2z" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>

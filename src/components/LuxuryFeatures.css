@@ -1,0 +1,316 @@
+/* Luxury Features Carousel Section Styles */
+
+.luxury-section-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 0px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 10;
+  overflow: visible;
+}
+
+/* Background Enhancements */
+.luxury-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 65%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.luxury-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(197, 168, 128, 0.02) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Golden Particles overlay */
+.particles-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.gold-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(197, 168, 128, 0.25);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(197, 168, 128, 0.7);
+  opacity: 0.5;
+}
+
+/* Float animations for particles */
+@keyframes floatUp {
+  0% { transform: translateY(100px) scale(0.8); opacity: 0; }
+  50% { opacity: 0.7; }
+  100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+}
+
+.p1 { left: 10%; top: 20%; animation: floatUp 15s infinite ease-in-out; }
+.p2 { left: 25%; top: 70%; animation: floatUp 18s infinite ease-in-out -4s; }
+.p3 { left: 40%; top: 40%; animation: floatUp 16s infinite ease-in-out -8s; }
+.p4 { left: 55%; top: 80%; animation: floatUp 20s infinite ease-in-out -2s; }
+.p5 { left: 70%; top: 15%; animation: floatUp 14s infinite ease-in-out -6s; }
+.p6 { left: 85%; top: 60%; animation: floatUp 17s infinite ease-in-out -10s; }
+.p7 { left: 95%; top: 30%; animation: floatUp 19s infinite ease-in-out -3s; }
+.p8 { left: 15%; top: 90%; animation: floatUp 15s infinite ease-in-out -12s; }
+
+/* Carousel Layout */
+.carousel-viewport {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  padding: 15px 0;
+  position: relative;
+  z-index: 3;
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Infinite Marquee Autoplay Scroll Track */
+.carousel-track-loop {
+  display: flex;
+  gap: 48px;
+  padding: 10px 0;
+  width: max-content;
+  align-items: center;
+  animation: marqueeScroll 24s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-33.3333%, 0, 0); }
+}
+
+/* Keep carousel track looping continuously without pausing on hover */
+/* .carousel-viewport:hover .carousel-track-loop {
+  animation-play-state: paused;
+} */
+
+/* Staggered Floating Cards Animation */
+.card-container {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+}
+
+.card-container.even {
+  animation: floatEven 6s ease-in-out infinite alternate;
+}
+
+.card-container.odd {
+  animation: floatOdd 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatEven {
+  0% { transform: translate3d(0, 12px, 0); }
+  100% { transform: translate3d(0, -12px, 0); }
+}
+
+@keyframes floatOdd {
+  0% { transform: translate3d(0, -12px, 0); }
+  100% { transform: translate3d(0, 12px, 0); }
+}
+
+/* Luxury Collectible Cards */
+.luxury-card {
+  position: relative;
+  width: 250px;
+  height: 310px; /* Reduced card height */
+  background: linear-gradient(135deg, rgba(1, 10, 30, 0.85) 0%, rgba(2, 18, 45, 0.78) 100%);
+  border: 1px solid rgba(197, 168, 128, 0.16);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05),
+    0 0 15px rgba(197, 168, 128, 0.02);
+  transition: 
+    border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, border-color, box-shadow;
+}
+
+/* Card Shine Overlay */
+.card-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.03) 45%,
+    rgba(197, 168, 128, 0.05) 50%,
+    rgba(255, 255, 255, 0.03) 55%,
+    transparent 60%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.luxury-card:hover .card-shine {
+  transform: translateX(100%);
+}
+
+.luxury-card:hover {
+  border-color: rgba(197, 168, 128, 0.5);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08),
+    0 0 25px rgba(197, 168, 128, 0.15);
+}
+
+/* Fading Slideshow Image Switcher container */
+.image-switcher-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 210px; /* Increased image height relative to the card size */
+  overflow: hidden;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.08);
+}
+
+.card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.card-image.active {
+  opacity: 1;
+}
+
+.luxury-card:hover .card-image.active {
+  transform: scale(1.08);
+}
+
+.card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 65%, rgba(1, 10, 30, 0.9) 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Body and Typography */
+.card-body {
+  padding: 12px 18px; /* Slightly tighter padding */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  background: transparent;
+  z-index: 2;
+}
+
+.card-title {
+  margin: 0;
+  font-family: var(--font-iceberg), sans-serif;
+  font-size: 21px; /* Increased text size */
+  color: var(--color-white);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  line-height: 1.2;
+}
+
+.luxury-card:hover .card-title {
+  color: var(--color-gold);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.card-desc {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; /* Increased text size */
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.35;
+  flex-grow: 1;
+}
+
+.card-icon-wrapper {
+  color: var(--color-gold);
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.luxury-card:hover .card-icon-wrapper {
+  transform: scale(1.15) rotate(5deg);
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(197, 168, 128, 0.5));
+}
+
+/* Responsive Rules */
+@media screen and (max-width: 1023px) {
+  .luxury-section-wrapper {
+    margin-top: -20px;
+    padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .carousel-track-loop {
+    gap: 32px;
+  }
+  .luxury-card {
+    width: 220px;
+    height: 285px;
+  }
+  .card-image-wrapper {
+    height: 185px;
+  }
+  .card-title {
+    font-size: 19px;
+  }
+  .card-desc {
+    font-size: 12px;
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { SearchProvider } from "@/context/SearchContext";
 import "@/global.css";
@@ -19,4 +20,16 @@ if (container) {
     </BrowserRouter>
   );
 }
+
+const footerContainer = document.getElementById("footer-root");
+
+if (footerContainer) {
+  const footerRoot = createRoot(footerContainer);
+  footerRoot.render(
+    <BrowserRouter>
+      <Footer />
+    </BrowserRouter>
+  );
+}
+
 

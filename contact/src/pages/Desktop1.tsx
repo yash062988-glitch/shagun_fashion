@@ -6,6 +6,7 @@ import LoopEmpowering from "../components/LoopEmpowering";
 import CallModal from "../components/CallModal";
 import AnimatedParagraph from "../components/AnimatedParagraph";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import styles from "./Desktop1.module.css";
 
 export type Desktop1Type = {};
@@ -354,18 +355,8 @@ const Desktop1: FunctionComponent<Desktop1Type> = ({}) => {
                   </div>
                 </motion.header>
 
-                {/* Simple 3-line Footer */}
-                <footer className={styles.siteFooter}>
-                  <span className={styles.footerTitle}>
-                    SHAGUN FASHION - MADE WITH LOVE ❤️
-                  </span>
-                  <p className={styles.footerDesc}>
-                    Crafting premium quality garments, custom lowers, tracksuits, and school uniforms with precision.
-                  </p>
-                  <p className={styles.footerCopy}>
-                    &copy; {new Date().getFullYear()} Shagun Fashion. All rights reserved.
-                  </p>
-                </footer>
+                {/* Luxury Branded Footer */}
+                <Footer />
               </div>
               
             </div>

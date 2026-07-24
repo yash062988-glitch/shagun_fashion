@@ -81,7 +81,7 @@
   background-color: var(--color-mediumblue);
   width: 870px;
   height: 870px;
-  opacity: 0.8;
+  opacity: 0.22; /* Reduced from 0.8 to prevent washing out the background image */
   flex-shrink: 0;
   animation: bgFloat1 20s ease-in-out infinite;
   pointer-events: none;
@@ -91,6 +91,7 @@
   background-color: var(--color-royalblue);
   width: 663px;
   height: 663px;
+  opacity: 0.16; /* Subtler blue overlay layer */
   animation: bgFloat2 25s ease-in-out infinite reverse;
   pointer-events: none;
 }
@@ -110,13 +111,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 68%; /* Increased from 50% to make the luxury workshop more prominent */
   height: 100%;
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
-  mask-image: linear-gradient(to right, black 0%, rgba(0,0,0,0.6) 40%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 0%, rgba(0,0,0,0.6) 40%, transparent 100%);
+  mask-image: linear-gradient(to right, black 0%, rgba(0,0,0,0.85) 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 0%, rgba(0,0,0,0.85) 60%, transparent 100%);
 }
 
 .tailoringBackgroundImage {
@@ -127,7 +128,7 @@
   height: 100%;
   object-fit: cover;
   object-position: 20% center;
-  filter: blur(0.5px) desaturate(5%) brightness(130%) contrast(115%);
+  filter: saturate(135%) brightness(105%) contrast(110%); /* Removed blur/desaturate to make it extremely clear, sharp and eye-catching */
   animation: workshopZoomFloat 25s ease-in-out infinite alternate;
   transform-origin: center left;
 }
@@ -138,7 +139,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(1, 10, 30, 0.3) 0%, rgba(1, 10, 30, 0.85) 80%);
+  background: linear-gradient(to right, rgba(1, 10, 30, 0.05) 0%, rgba(1, 10, 30, 0.65) 60%, rgba(1, 10, 30, 0.9) 100%); /* Reduced left-side opacity to show image details clearly */
 }
 
 @keyframes workshopZoomFloat {
@@ -147,28 +148,68 @@
 }
 
 .shagunFashionWrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: relative;
   width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
   overflow: hidden;
   white-space: nowrap;
-  pointer-events: none;
-  z-index: 1;
+  pointer-events: auto; /* Allow mouse hover interaction across the entire screen area */
+  z-index: 1; /* In front of section background, completely unblocked by cards */
 }
+
 .marqueeContent {
   display: inline-flex;
-  gap: 50px;
-  animation: marquee 20s linear infinite;
+  gap: 80px;
+  animation: marquee 24s linear infinite;
 }
+
 .shagunFashion {
   margin: 0;
-  font-size: 200px;
-  letter-spacing: 5px;
-  font-weight: 400;
-  font-family: var(--font-iceberg);
-  color: rgba(255, 255, 255, 0.06);
+  font-size: 150px;
+  letter-spacing: 12px;
+  font-weight: 800;
+  font-family: 'Satoshi', 'Manrope', system-ui, -apple-system, sans-serif;
+  text-align: center;
+  user-select: none;
+  pointer-events: none;
+  
+  /* Text Stroke Outline in White */
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.45);
+  
+  /* Default Text Color White + Yellow Sweep Animation */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.22) 35%,
+    rgba(253, 240, 166, 0.75) 47%,
+    rgba(233, 196, 106, 0.95) 50%,
+    rgba(253, 240, 166, 0.75) 53%,
+    rgba(255, 255, 255, 0.22) 65%,
+    rgba(255, 255, 255, 0.22) 100%
+  );
+  background-size: 260% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Smooth looping sweep */
+  animation: sweepHighlight 5.5s ease-in-out infinite;
+  
+  /* Smooth transition back to looping sweep when cursor leaves */
+  transition: background-position 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.shagunFashionWrapper[data-hover="true"] .shagunFashion {
+  animation: none;
+  background-position: calc(180% - var(--mouse-x) * 2.6) 0%;
+}
+
+@keyframes sweepHighlight {
+  0% { background-position: 180% 0%; }
+  100% { background-position: -80% 0%; }
+}
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -242,16 +283,45 @@
   flex-direction: column;
   gap: 9px;
 }
-.uniformsThatBuild, .confidenceExcellence {
+.uniformsThatBuild {
   margin: 0;
-  font-size: 70px;
+  font-size: 84px;
   font-weight: 400;
-  font-family: var(--font-iceberg);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.85);
+  display: block;
+  width: max-content;
+  animation: typeLine1 8s steps(40, end) infinite;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 .confidenceExcellence {
-  font-size: 76px;
-  color: var(--color-gold);
+  margin: 0;
+  font-size: 82px;
+  font-weight: 900;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #FFE259, #FFA751, #FF8C00, #FFE259, #FFA751);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px rgba(255, 226, 89, 0.4);
+  display: block;
   white-space: pre-wrap;
+  animation: typeLine2 8s steps(40, end) infinite, shineText 5s linear infinite, pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes shineText {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { filter: drop-shadow(0 0 15px rgba(255, 167, 81, 0.25)); }
+  50% { filter: drop-shadow(0 0 35px rgba(255, 167, 81, 0.55)); }
 }
 
 @keyframes typeLine1 {
@@ -347,64 +417,6 @@
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
-.trustedSectionWrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 600px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  animation: fadeInTrusted 1.5s ease-out forwards;
-  opacity: 0;
-}
-@keyframes fadeInTrusted {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.trustedSection {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  width: 100%;
-}
-.trustedSection::before {
-  content: "";
-  height: 1px;
-  background-color: var(--color-gold);
-  opacity: 0.5;
-  flex-grow: 1;
-  flex-basis: 0;
-  order: 1;
-}
-.shieldIcon {
-  width: 32px;
-  height: 36px;
-  object-fit: contain;
-  order: 2;
-  flex-shrink: 0;
-}
-.yellowLine {
-  height: 1px;
-  background-color: var(--color-gold);
-  opacity: 0.5;
-  flex-grow: 1;
-  flex-basis: 0;
-  order: 3;
-}
-.trustedByLeading {
-  width: 100%;
-  text-align: center;
-  order: 4;
-  margin: 0;
-  font-size: 22px;
-  font-weight: 400;
-  font-family: var(--font-iceberg);
-  color: var(--color-gold);
-  white-space: nowrap;
-  letter-spacing: 1px;
-}
 
 .featuresContainer {
   display: flex;
